@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="src/MyXpense.API/MyXpense.API.csproj" />
+  <Project Path="src/MyXpense.Application/MyXpense.Application.csproj" />
+  <Project Path="src/MyXpense.Domain/MyXpense.Domain.csproj" />
+  <Project Path="src/MyXpense.Infrastructure/MyXpense.Infrastructure.csproj" />
+  <Project Path="src/MyXpense.Persistence/MyXpense.Persistence.csproj" />
+  <Project Path="src/MyXpense.Shared/MyXpense.Shared.csproj" />
+</Solution>
