@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="16.0.0" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="16.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.14.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyXpense.Application\MyXpense.Application.csproj" />
+    <ProjectReference Include="..\MyXpense.Infrastructure\MyXpense.Infrastructure.csproj" />
+    <ProjectReference Include="..\MyXpense.Persistence\MyXpense.Persistence.csproj" />
+    <ProjectReference Include="..\MyXpense.Shared\MyXpense.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

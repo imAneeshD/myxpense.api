@@ -1,0 +1,6 @@
+@myxpense.api_HostAddress = http://localhost:5027
+
+GET {{myxpense.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
