@@ -40,8 +40,8 @@ public class DashboardService : IDashboardService
     {
         var breakdown = await _context.Expenses
             .Where(e => e.UserId == userId)
-            .Include(e => e.Tag)
-            .GroupBy(e => e.Tag.Name)
+            .Include(e => e.Category)
+            .GroupBy(e => e.Category.Name)
             .Select(g => new
             {
                 Category = g.Key,

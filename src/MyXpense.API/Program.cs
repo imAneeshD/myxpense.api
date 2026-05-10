@@ -42,9 +42,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("DefaultPolicy", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:3000")
               .AllowAnyMethod()
-              .AllowAnyHeader();
+              .AllowAnyHeader()
+              .AllowCredentials();
     });
 });
 
@@ -77,11 +78,14 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference(); // Scalar for API testing
 }
 
+app.UseCors("DefaultPolicy");
+
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.UseHttpsRedirection();
-
-app.UseCors("DefaultPolicy");
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();

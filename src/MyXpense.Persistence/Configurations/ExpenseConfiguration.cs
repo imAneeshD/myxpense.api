@@ -17,9 +17,9 @@ public class ExpenseConfiguration : IEntityTypeConfiguration<Expense>
             .HasForeignKey(e => e.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne(e => e.Tag)
-            .WithMany(t => t.Expenses)
-            .HasForeignKey(e => e.TagId)
+        builder.HasOne(e => e.Category)
+            .WithMany(c => c.Expenses)
+            .HasForeignKey(e => e.CategoryId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

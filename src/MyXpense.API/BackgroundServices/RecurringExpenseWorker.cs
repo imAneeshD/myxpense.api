@@ -45,7 +45,7 @@ public class RecurringExpenseWorker : BackgroundService
                     var expense = new Expense
                     {
                         UserId = recurring.UserId,
-                        TagId = recurring.TagId,
+                        CategoryId = recurring.CategoryId,
                         Title = recurring.Title,
                         Description = recurring.Description,
                         Amount = recurring.Amount,

@@ -23,20 +23,20 @@ public class GetAllExpensesQueryHandler : IRequestHandler<GetAllExpensesQuery, L
     public async Task<List<ExpenseDto>> Handle(GetAllExpensesQuery request, CancellationToken cancellationToken)
     {
         return await _context.Expenses
-            .Include(e => e.Tag)
+            .Include(e => e.Category)
             .OrderByDescending(e => e.ExpenseDate)
             .Select(e => new ExpenseDto
             {
                 Id = e.Id,
                 UserId = e.UserId,
-                TagId = e.TagId,
+                CategoryId = e.CategoryId,
                 Title = e.Title,
                 Description = e.Description,
                 Amount = e.Amount,
                 ExpenseDate = e.ExpenseDate,
                 PaymentMethod = e.PaymentMethod,
                 IsRecurring = e.IsRecurring,
-                TagName = e.Tag.Name
+                CategoryName = e.Category.Name
             })
             .ToListAsync(cancellationToken);
     }

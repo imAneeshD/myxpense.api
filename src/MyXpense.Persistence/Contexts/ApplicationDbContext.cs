@@ -16,13 +16,14 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
     }
 
     public DbSet<User> Users => Set<User>();
-    public DbSet<Tag> Tags => Set<Tag>();
+    public DbSet<Category> Categories => Set<Category>();
     public DbSet<Expense> Expenses => Set<Expense>();
     public DbSet<RecurringExpense> RecurringExpenses => Set<RecurringExpense>();
     public DbSet<Notification> Notifications => Set<Notification>();
     public DbSet<AlertRule> AlertRules => Set<AlertRule>();
     public DbSet<Budget> Budgets => Set<Budget>();
     public DbSet<DashboardSnapshot> DashboardSnapshots => Set<DashboardSnapshot>();
+    public DbSet<Group> Groups => Set<Group>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

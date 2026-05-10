@@ -17,7 +17,7 @@ public static class DatabaseSeeder
         {
             var adminUser = new User
             {
-                Id = Guid.NewGuid(),
+                Id = Guid.Parse("00000000-0000-0000-0000-000000000000"),
                 FullName = "Admin User",
                 Email = "admin@myxpense.com",
                 PasswordHash = "admin@123", // In real app, hash this!
@@ -31,16 +31,16 @@ public static class DatabaseSeeder
             context.Users.Add(adminUser);
             await context.SaveChangesAsync();
 
-            // Seed default tags for the admin user
-            var defaultTags = new List<Tag>
+            // Seed default categories for the admin user
+            var defaultCategories = new List<Category>
             {
-                new Tag { Name = "Groceries", Color = "#FF5733", Icon = "shopping_cart", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
-                new Tag { Name = "Rent", Color = "#33FF57", Icon = "home", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
-                new Tag { Name = "Bills", Color = "#3357FF", Icon = "receipt", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
-                new Tag { Name = "Travel", Color = "#F333FF", Icon = "flight", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" }
+                new Category { Name = "Groceries", Color = "#FF5733", Icon = "shopping_cart", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
+                new Category { Name = "Rent", Color = "#33FF57", Icon = "home", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
+                new Category { Name = "Bills", Color = "#3357FF", Icon = "receipt", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" },
+                new Category { Name = "Travel", Color = "#F333FF", Icon = "flight", UserId = adminUser.Id, CreatedDate = DateTime.UtcNow, CreatedBy = "System" }
             };
 
-            context.Tags.AddRange(defaultTags);
+            context.Categories.AddRange(defaultCategories);
             await context.SaveChangesAsync();
         }
     }

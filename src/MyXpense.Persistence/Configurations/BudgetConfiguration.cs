@@ -17,9 +17,9 @@ public class BudgetConfiguration : IEntityTypeConfiguration<Budget>
             .HasForeignKey(e => e.UserId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.HasOne(e => e.Tag)
+        builder.HasOne(e => e.Category)
             .WithMany()
-            .HasForeignKey(e => e.TagId)
+            .HasForeignKey(e => e.CategoryId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

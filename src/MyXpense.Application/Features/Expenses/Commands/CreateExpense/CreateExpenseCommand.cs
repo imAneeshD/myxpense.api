@@ -10,7 +10,7 @@ namespace MyXpense.Application.Features.Expenses.Commands.CreateExpense;
 public record CreateExpenseCommand : IRequest<Guid>
 {
     public Guid UserId { get; init; }
-    public Guid TagId { get; init; }
+    public Guid CategoryId { get; init; }
     public string Title { get; init; } = string.Empty;
     public string? Description { get; init; }
     public decimal Amount { get; init; }
@@ -33,7 +33,7 @@ public class CreateExpenseCommandHandler : IRequestHandler<CreateExpenseCommand,
         var entity = new Expense
         {
             UserId = request.UserId,
-            TagId = request.TagId,
+            CategoryId = request.CategoryId,
             Title = request.Title,
             Description = request.Description,
             Amount = request.Amount,

@@ -17,8 +17,8 @@ public class CreateExpenseCommandValidator : AbstractValidator<CreateExpenseComm
         RuleFor(v => v.UserId)
             .NotEmpty().WithMessage("UserId is required.");
 
-        RuleFor(v => v.TagId)
-            .NotEmpty().WithMessage("TagId is required.");
+        RuleFor(v => v.CategoryId)
+            .NotEmpty().WithMessage("CategoryId is required.");
 
         RuleFor(v => v.ExpenseDate)
             .NotEmpty().WithMessage("ExpenseDate is required.");

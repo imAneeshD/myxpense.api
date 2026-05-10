@@ -6,7 +6,7 @@ namespace MyXpense.Domain.Entities;
 public class RecurringExpense : BaseAuditableEntity
 {
     public Guid UserId { get; set; }
-    public Guid TagId { get; set; }
+    public Guid CategoryId { get; set; }
     public string Title { get; set; } = string.Empty;
     public string? Description { get; set; }
     public decimal Amount { get; set; }
@@ -17,5 +17,5 @@ public class RecurringExpense : BaseAuditableEntity
     public bool IsActive { get; set; } = true;
 
     public User User { get; set; } = null!;
-    public Tag Tag { get; set; } = null!;
+    public Category Category { get; set; } = null!;
 }

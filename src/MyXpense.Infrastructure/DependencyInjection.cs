@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using MyXpense.Application.Common.Interfaces;
+using MyXpense.Infrastructure.Services;
 
 namespace MyXpense.Infrastructure;
 
@@ -28,6 +30,8 @@ public static class DependencyInjection
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"] ?? "super_secret_key_1234567890123456"))
             };
         });
+
+        services.AddScoped<ITokenService, TokenService>();
 
         return services;
     }
